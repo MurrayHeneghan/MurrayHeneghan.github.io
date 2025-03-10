@@ -1,22 +1,181 @@
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2 - Life on Land (Global Goal 15)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-      body{
-        background:linear-gradient(to bottom,blue,navy,cyan);
-        color: white;
-        text-align: center; 
-        display: grid;
-        place-items: center;
-      }
+        /* General Styling */
+        body {
+            background: linear-gradient(to bottom, #1E3A8A, #0F172A);
+            color: white;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            font-weight: 300;
+            max-width: 700px;
+            line-height: 1.4;
+        }
+
+        .content {
+            max-width: 800px;
+            text-align: center;
+            margin-top: 80px; /* Ensures content does not overlap with navbar */
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(30, 58, 138, 0.9);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar .menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .menu li {
+            display: inline;
+        }
+
+        .navbar .menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1em;
+            font-weight: 500;
+            padding: 8px 16px;
+            transition: background 0.3s, border-radius 0.3s;
+        }
+
+        .navbar .menu a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+        }
+
+        /* Responsive Menu */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8em;
+            cursor: pointer;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .menu {
+                display: none;
+                flex-direction: column;
+                background: rgba(30, 58, 138, 0.95);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .navbar .menu.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Image Styling */
+        .image-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            font-weight: 300;
+            margin-top: 10px;
+        }
     </style>
-  </head>
-  <body>
-    <a href = "index.html">Home</a>
-    <h1>Unit 2- Life on Land Global Goal 15</h1>
-   <h2>I created slides 1,2,4 using python. The first slide is a welcome slide, the next two slides describe the goal, and then a slide about possible solutions.</h2>
-    <img src="Media/LOF.gif">
-    <h3>I created a logo of a tree with the ability to change the color and  location of the tree using parameters</h3>
-    <h3>Below is some of my code snippets from this project</h3>
-    <img src="Media/Unit2code.png">
-  </body>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">Mr. Heneghan's Portfolio</a>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="unit2.html">Unit 2</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">About Me</a></li>
+        </ul>
+        <span class="menu-toggle">&#9776;</span>
+    </nav>
+
+    <div class="content">
+        <h1>Unit 2 - Life on Land (Global Goal 15)</h1>
+        <h2>I created slides 1, 2, and 4 using Python. The first slide is a welcome slide, the next two slides describe the goal, and the last one presents possible solutions.</h2>
+
+        <div class="image-container">
+            <img src="Media/LOF.gif" alt="Life on Land Animation">
+        </div>
+
+        <h3>I created a logo of a tree with the ability to change its color and location using parameters.</h3>
+        
+        <h3>Below are some of my code snippets from this project:</h3>
+
+        <div class="image-container">
+            <img src="Media/Unit2code.png" alt="Unit 2 Code Snippets">
+        </div>
+    </div>
+
+    <script>
+        // Toggle Menu for Mobile View
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('show');
+        });
+    </script>
+
+</body>
 </html>
+
